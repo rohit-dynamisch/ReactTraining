@@ -50,7 +50,7 @@ function App() {
         <button onClick={handleClick}>Button from Parent</button>
        )}</Children> */}
 
-       <ChildToParent ParentMethod={ParentMethod}/>
+       {/* <ChildToParent ParentMethod={ParentMethod}/> */}
 
        {/* <DefaultExport/> */}
        {/* <NamedExportDemo/> */}
