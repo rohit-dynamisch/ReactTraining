@@ -140,7 +140,7 @@ function UseEffectDemo() {
       </div>
       <hr />
 
-      <h2>Caraousel Using useEffect and setInterval</h2>
+      <center><h2>Caraousel Using useEffect and setInterval</h2></center>
       <div>
       <img src={imgArr[imgSrc]}/>
       <button onClick={()=>setShowImg(true)}>Start</button>

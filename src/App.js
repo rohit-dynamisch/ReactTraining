@@ -13,6 +13,15 @@ import Counter from './D4CounterApp/Counter';
 import StateArray from './D4StateArray/StateArray';
 import NestedComponent from './D4NestedComponent/NestedComponent';
 import UseEffectDemo from './D5useEffect/UseEffectDemo';
+import Form from './D7Events/InputTypesNEvents';
+import InputTypesNEvents from './D7Events/InputTypesNEvents';
+import ExtraEvents from './D7Events/ExtraEvents';
+import Loops from './D9Loops/Loops';
+import MapFilterReducs from './D9Loops/MapFilterReducs';
+import IterateObj from './D10Filters/IterateObj';
+import Scrap from './D10Filters/Scrap';
+import FiltersInCard from './D10Filters/FiltersInCard';
+import Todo from './D11Todo/Todo';
 
 function App() {
   const [temp,setTemp]=useState("")
@@ -69,7 +78,19 @@ function App() {
        <hr/>
        <NestedComponent/> */}
 
-       <UseEffectDemo/>
+       {/* <UseEffectDemo/> */}
+
+       {/* <InputTypesNEvents/> */}
+       {/* <ExtraEvents/> */}
+
+       {/* <Loops/> */}
+       {/* <MapFilterReducs/> */}
+
+       {/* <IterateObj/> */}
+       {/* <Scrap/> */}
+       {/* <FiltersInCard/> */}
+
+       {/* <Todo/> */}
 
       </>
       );
