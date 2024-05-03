@@ -13,7 +13,7 @@ function Page2() {
         setCounter(c=>c-1)
     }
   return (
-    <div>
+    <div style={{marginLeft:"50px"}}>
       <PropValidation name="rohit" age={22} arr={[1,2,3]} func={func}/>
       <br/>
       <OneWayBinding counter={counter} inc={inc} dec={dec}/>

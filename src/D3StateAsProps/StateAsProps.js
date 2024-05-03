@@ -2,7 +2,7 @@ import React from 'react'
 
 function StateAsProps({num,setNum,check,children}) {
   return (
-    <div>
+    <div style={{marginLeft:"50px"}}>
       Random Number - {num}
       <br/><br/>
       <button onClick={()=>setNum(Math.ceil(Math.random()*100))}>Click Here to Try You Luck!</button>

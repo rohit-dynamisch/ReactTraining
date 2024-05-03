@@ -15,17 +15,27 @@ function InputTypesNEvents() {
   const [domain, setDomain] = useState();
   const [mode, setMode] = useState();
   const [salary, setSalary] = useState();
+  const [curDate,setCurDate]=useState(new Date())
+  const [color,setColor]=useState()
+  const [dateTime,setDateTime]=useState()
+  const [month,setMonth]=useState();
+  const [range,setRange]=useState();
+  const [week,setWeek]=useState()
+  const [time,setTime]=useState();
+  const [reset,setReset]=useState();
+  const [search,setSearch]=useState();
+  const [image,setImage]=useState();
+  const [file,setFile]=useState();
+  const [url,setUrl]=useState();
 
   const [nameError, setNameError] = useState("");
   const [numberError, setNumberError] = useState();
   const [salaryError, setSalaryError] = useState();
-
   const [focus, setFocus] = useState();
 
   const [showData, setShowData] = useState(false);
 
   function handleCheckBox(e) {
-    console.log(e.target.checked);
     // if (e.target.checked) setSkills([...skills, e.target.value]);
     // else setSkills([skills.filter((item) => item != e.target.value)]);
     setSkills({
@@ -75,10 +85,22 @@ function InputTypesNEvents() {
       Math.floor(e.target.scrollHeight - e.target.scrollTop),
       e.target.clientHeight
     );
-    if (bottom) {
-      alert("You have reached bottom of form");
-    }
+    // if (bottom) {
+    //   alert("You have reached bottom of form");
+    // }
   }
+  
+  // const handleFileChange = (e) => {
+  //   const file = e.target.files[0];
+  //   if (file) {
+  //     const reader = new FileReader();
+  //     reader.onload = (event) => {
+  //       console.log(event.target.result)
+  //       setFile(event.target.result);
+  //     };
+  //     reader.readAsDataURL(file);
+  //   }
+  // };
 
   return (
     <>
@@ -289,6 +311,136 @@ function InputTypesNEvents() {
             </p>
           </div>
 
+          {/* Color */}
+          <div style={{backgroundColor:color}}>
+            <h3 for="color">Select color - </h3>
+            <br />
+            <input
+              id="color"
+              type="color"
+              value={color}
+              onChange={(e) => setColor(e.target.value)}
+              // onBlur={handleNameBlur}
+              // onFocus={handleFocus}
+            />
+            <br />
+            <p>Events used : onChange/onFocus/onBlur - Input type Text</p>
+            {/* <i>{nameError}</i> */}
+          </div>
+
+          {/* Date Time */}
+          <div>
+            <h3 for="dateTime">Select Date and Time - </h3>
+            <br />
+            <input
+              id="dateTime"
+              type="datetime-local"
+              value={dateTime}
+              onChange={(e) => setDateTime(e.target.value)}
+              // onBlur={handleNameBlur}
+              // onFocus={handleFocus}
+            />
+            <br />
+            <p>Events used : onChange/onFocus/onBlur - Input type Text</p>
+            {/* <i>{nameError}</i> */}
+          </div>
+
+          {/* month */}
+          <div>
+            <h3 for="month">Select Month - </h3>
+            <br />
+            <input
+              id="month"
+              type="month"
+              value={month}
+              onChange={(e) => setMonth(e.target.value)}
+              // onBlur={handleNameBlur}
+              // onFocus={handleFocus}
+            />
+            <br />
+            <p>Events used : onChange/onFocus/onBlur - Input type Text</p>
+            {/* <i>{nameError}</i> */}
+          </div>
+
+          {/* week */}
+          <div>
+            <h3 for="week">Select Week - </h3>
+            <br />
+            <input
+              id="week"
+              type="week"
+              value={week}
+              onChange={(e) => setWeek(e.target.value)}
+              // onBlur={handleNameBlur}
+              // onFocus={handleFocus}
+            />
+            <br />
+            <p>Events used : onChange/onFocus/onBlur - Input type Text</p>
+            {/* <i>{nameError}</i> */}
+          </div>
+
+          {/* range */}
+          <div>
+            <h3 for="range">Select Range - </h3>
+            <br />
+            <input
+              id="range"
+              type="range"
+              value={range}
+              onChange={(e) => setRange(e.target.value)}
+              min="0"
+              max="10"
+              // onBlur={handleNameBlur}
+              // onFocus={handleFocus}
+            />
+            <br />
+            <p>Value : {Math.ceil(range)}</p>
+            {/* <i>{nameError}</i> */}
+          </div>
+          
+          {/* time */}
+          <div>
+            <h3 for="time">Select Time - </h3>
+            <br />
+            <input
+              id="time"
+              type="time"
+              value={time}
+              onChange={(e) => setTime(e.target.value)}
+              // onBlur={handleNameBlur}
+              // onFocus={handleFocus}
+            />
+            <br />
+            {/* <i>{nameError}</i> */}
+          </div>
+
+          {/* files */}
+          <div>
+            <h3 for="file">Select File - </h3>
+            <br />
+            <input
+              id="file"
+              type="file"
+              onChange={e=>setFile(URL.createObjectURL(e.target.files[0]))}
+            />
+            <br />
+            <img height="100px" width="100px" src={file}></img>
+          </div>
+
+          {/* {file && <iframe src={file} id="preview" width="1000px" height="1000px"></iframe>} */}
+
+          <div>
+            <h3 for="utl">Fill URL - </h3>
+            <br />
+            <input
+              id="url"
+              type="url"
+              value={url}
+              onChange={e=>setUrl(e.target.value)}
+            />
+            <br />
+          </div>
+
           {/* Buttons and Data */}
           <div>
             <input type="submit" value="SUBMIT" />
@@ -300,17 +452,31 @@ function InputTypesNEvents() {
             </button>
             {showData && (
               <div>
-                <p>Your Data!</p>
+                <h2>Your Data!</h2>
                 <p>Name : {name}</p>
                 <p>Number : {number}</p>
                 <p>DOB : {dob}</p>
-                <p>Skills : {JSON.stringify(skills)}</p>
+                {/* <p>Age from Date : {
+                  curDate
+                   new Date(dob)?.getYear()+1900 
+               }</p> */}
+                <p>Skills : {Object.keys(skills).filter(item=> skills[item])}</p>
                 <p>Domain : {domain}</p>
                 <p>Work Mode : {mode}</p>
                 <p>Exprected Salary : {salary}</p>
+
+                <p>Selected Colour : <input type="color" value={color} readOnly/></p>
+                <p>DateTime : {dateTime}</p>
+                <p>Selected Month: {month}</p>
+                <p>Selected Week : {week}</p>
+                <p>Selected Range : {range}</p>
+                <p>Selected Time : {time}</p>
+                <p>URL : {url}</p>
               </div>
             )}
           </div>
+
+          
         </form>
       </div>
 

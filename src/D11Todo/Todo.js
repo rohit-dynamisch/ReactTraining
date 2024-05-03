@@ -6,6 +6,8 @@ function Todo() {
   const [completedTasks, setCompletedTasks] = useState([]);
   const [task, setTask] = useState("");
   const [error,setError]=useState("")
+
+  //Handles adding of new task
   const handleAdd = () => {
     if(task.trim().length==0){
         setError("Please Enter Something!")
@@ -19,6 +21,8 @@ function Todo() {
     setTask("");
   };
 
+
+  //handles change in priority of pending task
   const handlePriorityChange = (e, id) => {
     let index = pendingTasks.findIndex((item) => item.id == id);
     if (e.target.value == "high")
@@ -36,6 +40,8 @@ function Todo() {
     }
   };
 
+
+  //handles changing of status between pending and complete
   const handleStatus = (status, id) => {
     if (status == "pending") {
       let index = pendingTasks.findIndex((item) => item.id == id);

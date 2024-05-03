@@ -6,11 +6,11 @@ import Task3 from "../components/Task3";
 class Page1 extends Component {
     render() {
         return (
-            <>
+            <div style={{marginLeft:"50px"}}>
                {/* <Task1/> */}
                <Task2/>
                {/* <Task3/> */}
-            </>
+            </div>
         );
     }
 }

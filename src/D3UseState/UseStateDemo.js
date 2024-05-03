@@ -30,7 +30,7 @@ function UseStateDemo() {
         )
     }
   return (
-    <div>
+    <div style={{marginLeft:"50px"}}>
       {jsxContent}
       <button onClick={updateJSX}>Click Here to Change JSX state</button>
       <br/>

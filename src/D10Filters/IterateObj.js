@@ -130,6 +130,7 @@ function IterateObj() {
 
   return (
     <div>
+    <div style={{marginLeft:"50px"}}>
       <h3>Original Array - </h3>
       {arr.map((i) => (
         <span>{i} , </span>
@@ -150,7 +151,7 @@ function IterateObj() {
           ))}
         </div>
       )}
-
+</div>
       <hr />
       <h2>Iterating Nested Object!</h2>
       <div>
