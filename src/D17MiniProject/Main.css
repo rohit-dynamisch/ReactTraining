@@ -1,12 +1,26 @@
+body{
+    /* background-color:rgb(243 244 246); */
+    
+
+}
 .navbar{
+    
     display: flex;
     justify-content: space-between;
     height: 3rem;
     margin: 10px;
     padding: 0px 5%;
     /* border: 1px solid black; */
-    border-radius: 10px 10px 0px 0px;
-    border-bottom: 1px solid black;
+    border-radius: 10px;
+    /* background-color: white; */
+    background-color: #2f2626;
+    color: white;
+    /* background-color: rgb(31 41 55 / 1); */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    font-family: "Platypi", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
 }
 .leftNav{
     display: flex;
@@ -34,10 +48,10 @@
 .cart>p{
     position: absolute; 
     margin-top: -15px;
-    right: -10px;
+    right: -5px;
     width: 1.3rem;
     text-align: center;
-    background-color: antiquewhite;
+    font-weight: bolder;
     border-radius: 50%;
     font-size: 1rem;
     height: 1.3rem;
@@ -51,18 +65,20 @@
     display: flex;
     padding: 10px;
     justify-content: space-around;
-    background-color:#e5e7eb;
+    /* background-color:#e5e7eb; */
 }
 .filters{
     /* border: 1px solid black; */
-    flex-basis: 20vw;
+    flex-basis: 15vw;
+    display: flex;
+    flex-direction: column;
 }
 
 .productList{
     /* border: 1px solid black; */
-    flex-basis: 70vw;
+    flex-basis: 85vw;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     flex-wrap: wrap;
     box-sizing: border-box;
     padding: 10px;
@@ -75,20 +91,37 @@
 .profileOptions{
     position: absolute;
     width: 100px;
-    border: 1px solid black;
+    background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
+    right: -30px;
+    z-index: 10;
+    color: #2f2626;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.profileOptions>div:hover{
+background-color: #e5e7eb;
+}
+.profileOptions>div{
+    width: 100%;
+    text-align: center;
 }
 
 .card{
+    font-size: 0.9rem;
     flex-basis: 30%;
-    height: 350px;
+    height: 380px;
     box-sizing: border-box;
     width: 100%;
     padding: 10px;
     cursor: pointer;
     position: relative;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+.card:hover{
+    opacity: 0.8;
 }
 .card img{
     width: 100%;
@@ -106,7 +139,7 @@
 }
 
 .editForm{
-    height: 100vh;
+    height: fit-content;
     width: 100vw;
     display: flex;
     /* justify-content: center; */
@@ -141,14 +174,14 @@
 
 .detailsContainer{
     height: 90vh;
-    border: 2px solid black;
     box-sizing: border-box;
 }
 
 .detailsMain{
     margin: 30px;
     height: 85%;
-    border: 2px solid black;
+    border:2px solid rgb(209 213 219);
+    background-color: white;
     display: flex;
     box-sizing: border-box;
     width: 90%;
@@ -160,6 +193,7 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+    
 
 }
 
@@ -169,11 +203,13 @@
     justify-content: center;
     align-items: center;
     max-width: 40%;
+    
 }
 
 .productInfoContainer{
 flex-basis: 45%;
 }
+
 .productInfo{
     margin: 10px;
     display: flex;
@@ -187,6 +223,7 @@ flex-basis: 45%;
  flex-basis: 20%;
  margin: 5px;
  max-height: 20%;
+ border:2px solid rgb(209 213 219);
 
 }
 .imagePreview img{
@@ -209,24 +246,28 @@ object-fit: contain;
     /* justify-content: center; */
     align-items: center;
     flex-direction: column;
-    
+    background-color: white;
+    border-radius: 10px;
+    border:1px solid rgb(209 213 219);
 }
 
 .cartContainer{
     width: 100%;
-    height: 90vh;
+    /* height: 90vh; */
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     background-color: #e5e7eb;
 }
 .cartItem{
     width: 80%;
-    height: 20%;
+    height: 150px;
     margin: 10px;
     display: flex;
     justify-content: space-around;
     padding: 10px;
     background-color: white;
+    border-bottom: 2px solid rgb(209 213 219);
 }
 
 .cartItemImage{
@@ -281,6 +322,8 @@ object-fit: contain;
     align-items: center;
     height: 80%;
     box-sizing: border-box;
+    border: 2px solid rgb(209 213 219);
+    border-radius: 10px;
 }
 .rightAuth{
     width: 40%;
@@ -290,17 +333,20 @@ object-fit: contain;
     flex-direction: column;
     margin: 10px;
     box-sizing: border-box;
+    width: 60%;
 
 
 }
-.leftAuth input{
+.leftAuth .input{
     border: none;
     border-bottom: 1px solid black;
-    background-color: white;
+    /* background-color: #e5e7eb; */
     height: 2rem;
     padding: 4px;
     font-size: 1rem;
     box-sizing: border-box;
+    /* border-radius: 10px; */
+    width: 100%;
 }
 
 .leftAuthSignup{
@@ -308,21 +354,24 @@ object-fit: contain;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 90%;
+    height: 100%;
     box-sizing: border-box;
+    border:2px solid rgb(209 213 219);
+    border-radius: 10px;
 }
 .leftAuthSignup>div{
     display: flex;
     width: 100%;
     justify-content: space-evenly;
     margin: 10px;
+    
 }
 .leftAuthSignup>div>div{
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 45%;
 }
-.authNameSignup input,.authEmailSignup input,.authNumberSignup input,.authDobSignup input,.authCountrySignup input,.authPinSignup input,.authPasswordSignup input,.authConfPasswordSignup input{
+.authNameSignup .input,.authEmailSignup .input,.authNumberSignup .input,.authDobSignup .input,.authCountrySignup .input,.authPinSignup .input,.authPasswordSignup .input,.authConfPasswordSignup .input{
     height: 1.6rem;
     border: none;
     border-bottom: 1px solid black;
@@ -336,11 +385,14 @@ object-fit: contain;
 }
 .forgotPasswordDiv{
     height: 90%;
+    font-size: 1rem;
     display: flex;
     flex-direction: column;
     /* align-items: center; */
     box-sizing: border-box;align-items: center;
     width: 40%;
+    border:2px solid rgb(209 213 219);
+    border-radius: 10px;
 }
 
 .forgotContainer{
@@ -365,4 +417,378 @@ object-fit: contain;
     padding: 4px;
     font-size: 1rem;
     box-sizing: border-box;
+}
+
+.leftAuth button{
+    width: 100%;
+}
+
+
+.loginForgot{
+    width: 100%;
+    text-align: end;
+    font-size: 0.8rem;
+    
+}
+
+.signupShow{
+    display: flex;
+    position: relative;
+}
+/* .signupShow>span{
+    position: absolute;
+    right: 0px;
+} */
+
+.subTotal,.totalItem{
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    border-bottom: 2px solid rgb(209 213 219);
+}
+
+.AddressFormDiv{
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    padding: 10px;
+}
+.AddressForm{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    border: 2px solid rgb(209 213 219);
+}
+.AddressForm>div{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.checkout{
+    display: flex;
+    justify-content: space-around;
+    box-sizing: border-box;
+    padding: 20px;
+}
+.checkout>div{
+    flex-basis: 40%;
+   
+}
+.detailsBtn{
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
+    cursor: pointer;
+}
+
+.detailsBtn button{
+    width: 150px;
+    height: 50px;
+    color: white;
+    background-color: rgb(79 70 229 / 1);
+}
+
+.authContainer span{
+    color: red;
+    font-size: 0.7rem;
+}
+
+.addressCountry>div{
+    width: 30%;
+}
+.addressCountry>div select{
+    width: 100%;
+    height: 2rem;
+}
+
+.AddressForm span{
+    color: red;
+}
+
+.productBtn{
+    display: flex;
+    flex-direction: row !important;
+    justify-content: end;
+}
+.productBtn>div{
+    margin: 10px;
+    height: 2rem;
+    width: 5rem;
+}
+
+
+
+.editForm input{
+border:2px solid rgb(209 213 219);
+height: 2rem;
+border-radius: 10px;
+padding: 7px;
+font-size: 1.1rem;
+}
+.cartBtn{
+    margin: 20px;
+    width: 10rem;
+}
+.cartBtn button{
+height: 2rem;
+ width: 100%;
+background-color: rgb(79 70 229);
+color: white;
+border: none;
+border-radius: 10px;
+margin-top: 25px;
+font-size: 1.2rem;
+}
+.projectMain{
+    font-family: "Merriweather", serif;
+    font-weight: 500;
+}
+
+.loginBtn,.signupSubmit{
+    background-color: #50c878;
+    border: none;
+    border-radius: 10px;
+    height: 2rem;
+    font-size: large;
+    cursor: pointer;
+    width: 6rem;
+    
+}
+
+.selectAddress>div{
+    margin: 10px;
+    font-size: 0.8rem;
+}
+
+.paymentForm{
+    width: 100%;
+
+}
+.paymentFormContent{
+    width: 100%;
+    margin-top: 30px;
+}
+.paymentFormContent>div{
+    margin: 20px;
+}
+.cardDetails{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgb(209 213 219);
+    margin: 10px;
+}
+
+.cardDetails>div{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    width: 60%;
+}
+.cardDetails span{
+    color: red;
+    font-size: 0.8rem;
+}
+
+
+.allOrdersItem{
+    display: flex;
+    flex-direction: column;
+    /* font-family:'Times New Roman', Times, serif; */
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.allOrdersItem>div{
+display: flex;
+border-radius: 10px;
+margin: 10px;
+width: 90%;
+padding-top: 10px;
+border: 2px solid rgb(79 70 229 / 1);
+}
+.allOrdersItem>div>div{
+    text-align: center;
+}
+
+.allOrdersId{
+    width: 10%;
+}
+
+.allOrdersOrder{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    
+    
+}
+
+.allOrderOrder{
+    width: 20%;
+}
+.allOrdersOrder>div{
+    display: flex;
+    width: 90%;
+    margin: 10px;
+    text-wrap: wrap;
+    justify-content: space-between;
+    border: 2px solid rgb(243 244 246);
+}
+.allOrdersOrder>div>div:first-child{
+    flex-basis: 30%;
+    height: 70px;
+    width: 70px;
+}
+.allOrdersOrder>div>div:last-child{
+    flex-basis: 60%;
+}
+.allOrdersOrder img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.allOrdersPrice{
+    width: 7%;
+    text-align: center;
+}
+
+.allOrdersAddress{
+    width: 30%;
+    text-wrap: wrap;
+}
+.allOrdersAddress>div{
+    display: flex;
+    flex-direction: column;
+    
+}
+.allOrdersAddress span{
+    margin: 4px;
+}
+
+.allOrderPayment{
+    width: 6%;
+}
+.allOrderStatus{
+    width: 10%;
+}
+.allOrderDate{
+    width: 10%;
+}
+
+.orderSuccess{
+    height: 87vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.orderSuccess>div{
+    height: 30vh;
+    width: 40vw;
+}
+.orderSuccess>div div{
+    margin: 10px;
+    text-align: center;
+}
+
+.allOrdersHeader>div{
+    text-align: center;
+    background-color: #1d1160 !important;
+    color:rgb(243 244 246);
+    border-radius: 10px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+.allOrdersItem>div:nth-child(even){
+    background-color: #E6E6FA;
+}
+.allOrdersItem>div:nth-child(odd){
+    background-color: white;
+}
+
+.allOrdersHeader>div>div{
+    height: fit-content;
+    display: flex !important;
+    text-align: center !important;
+    justify-content: center !important;
+}
+.addressCard p{
+    margin: 2px;
+  
+}
+
+.allOrdersHeader{
+    display: flex !important;
+    align-items: center !important;
+}
+
+.addressCard{
+    border: 2px solid rgb(209 213 219);
+    border-radius: 6px;
+    background-color: white;
+}
+
+.paymentBtn{
+    width: 8rem;
+    height: 2.2rem;
+    background-color: rgb(79 70 229 / 1);
+    color: white;
+    border-radius: 10px;
+    border: 1px solid blue;
+    cursor: pointer;
+}
+
+.myOrderHead{
+    display: flex;
+    font-size: 0.9rem;
+    width: 90%;
+    justify-content: space-between;
+    background-color: #cbe9d5;
+    /* border-radius: 10px; */
+    padding: 10px;
+}
+
+
+
+.myOrderMain{
+    padding: 10px;
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    background-color: rgb(243 244 246);
+    /* border-radius: 10px; */
+    width: 90%;
+}
+.myOrderContent>div:first-child{
+    margin-right: 20px;
+}
+
+.myOrderContent{
+    height: 100px;
+    display: flex;
+    margin-top: 10px;
+}
+.myOrderContent img{
+    height: 50px;
+    width: 50px;
+    object-fit: contain;
+}
+.myOrderDiv{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.myOrderDiv>div{
+    width: 70%;
+}
+
+.myOrderHead>div {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
 }

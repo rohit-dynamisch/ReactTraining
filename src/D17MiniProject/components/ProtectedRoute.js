@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useAuthContext } from '../context/AuthContext'
-import { Navigate } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
 
 function ProtectedRoute({children}) {
+    const location=useLocation();
+    
     const {userAuth}=useAuthContext();
-    if(!userAuth) return <Navigate to="/project/auth/login" replace={true}></Navigate>
+    if(!JSON.parse(localStorage.getItem('user'))) return <Navigate to="/project/auth/login" replace={true}></Navigate>
     return children;
 }
 

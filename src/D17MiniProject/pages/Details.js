@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useProductContext } from "../context/ProductContext";
 import { useCartContext } from "../context/CartContext";
 
 function Details() {
-  const { id } = useParams();
-  const {addToCart}=useCartContext();
+  let { id } = useParams();
+
+  if(!id) id=2;
+
+  const {addToCart,cart}=useCartContext();
   const { products } = useProductContext();
   const [selectedProduct, setSelectedProduct] = useState();
   const [selectedImg,setSelectedImg]=useState()
+  
   useEffect(() => {
     if (products){
       setSelectedProduct(products.filter((item) => item.id == id)[0]);
@@ -39,16 +43,16 @@ function Details() {
                 <h3>{selectedProduct.title}</h3>
               </div>
               <div>
-                <span>{selectedProduct.rating}</span>
-                <span>800$</span>
-                <span>{selectedProduct.discountPercentage}% off</span>
+                {/* <span>{selectedProduct.rating} </span> */}
+                <span>₹{selectedProduct.price}</span>
+                {/* {selectedProduct.discountPercentage && selectedProduct.discountPercentage>0 && <span>{selectedProduct.discountPercentage}% off</span>} */}
               </div>
               <div>Brand : {selectedProduct.brand}</div>
               <div>Category : {selectedProduct.category}</div>
               <div>{selectedProduct.description}</div>
-              <div>
-                <button onClick={()=>addToCart(selectedProduct)}>ADD TO CART</button>
-                <button>BUY NOW</button>
+              <div className="detailsBtn">
+                {cart.filter(item=>item.productId==id).length==0?<button style={{cursor:"pointer",border:"none",borderRadius:"10px"}} onClick={()=>addToCart(selectedProduct)}>ADD TO CART</button>:<button style={{border:"none",borderRadius:"10px",cursor:"pointer"}}><Link style={{textDecoration:"none",color:"white"}} to="/project/cart">Item already in Cart Go to cart</Link></button>}
+                {/* <button style={{cursor:"pointer"}}>BUY NOW</button> */}
               </div>
             </div>
           </div>

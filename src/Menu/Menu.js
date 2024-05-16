@@ -281,6 +281,43 @@ function Menu() {
           </div>
 
           <div>
+            <h3>Redux</h3>
+            <p>
+              <NavLink
+                style={{ textDecoration: "none",color:"black" }}
+                to="day26/redux"
+              >
+                React Redux
+              </NavLink>
+            </p>
+          </div>
+
+          <div>
+            <h3>ReduxToolKit</h3>
+            <p>
+              <NavLink
+                style={{ textDecoration: "none",color:"black" }}
+                to="day27/reduxToolKit"
+              >
+                ReduxToolKit
+              </NavLink>
+            </p>
+          </div>
+
+          <div>
+            <h3>Lazy Loading</h3>
+            <p>
+              <NavLink
+                style={{ textDecoration: "none",color:"black" }}
+                to="day30/lazyLoading"
+                
+              >
+                Lazy Loading
+              </NavLink>
+            </p>
+          </div>
+
+          <div>
             <h3>Project</h3>
             <p>
               <NavLink
@@ -291,6 +328,9 @@ function Menu() {
               </NavLink>
             </p>
           </div>
+
+
+
         </div>
         <div
           className="closeMenu"

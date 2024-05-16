@@ -2,28 +2,65 @@ import React, { useState } from "react";
 import "../Main.css";
 import { useCartContext } from "../context/CartContext";
 import { Link } from "react-router-dom";
+import { useAuthContext } from "../context/AuthContext";
+import { Badge } from "@mui/material";
+import AccountCircleSharpIcon from '@mui/icons-material/AccountCircleSharp';
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { useProductContext } from "../context/ProductContext";
 function Navbar() {
-  const [showProfileOptions, setShowProfileOptions] = useState(false)
-  const {cart}=useCartContext();
+  const [showProfileOptions, setShowProfileOptions] = useState(false);
+  const { cart } = useCartContext();
+  const { logout } = useAuthContext();
+  const {userAuth}=useAuthContext();
+  const {search,handleSearch}=useProductContext()
   return (
     <div className="navbar">
       <div className="leftNav">
-        <div>Logo</div>
-        <div><Link to="/project">Products</Link></div>
-        <div>Orders</div>
-        <div><Link to="/project/addProduct">Add Product</Link></div>
+        <div>
+          <Link
+            style={{ textDecoration: "none", color: "white" }}
+            to="/project"
+          >
+            Products
+          </Link>
+        </div>
+        <div>
+          <Link
+            style={{ textDecoration: "none", color: "white" }}
+            to="/project/allorders"
+          >
+            All Orders
+          </Link>
+        </div>
+        <div>
+          <Link
+            style={{ textDecoration: "none", color: "white" }}
+            to="/project/addProduct"
+          >
+            Add Product
+          </Link>
+        </div>
+      </div>
+      <div style={{textAlign:"center",fontFamily:"Jaro",fontSize:"1.2rem"}}>
+        LOGO HERE
       </div>
       <div className="rightNav">
-        <div>
+        {/* <div>
         <svg viewBox="0 0 24 24" height="32px" width="32px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M2 9.1371C2 14 6.01943 16.5914 8.96173 18.9109C10 19.7294 11 20.5 12 20.5C13 20.5 14 19.7294 15.0383 18.9109C17.9806 16.5914 22 14 22 9.1371C22 4.27416 16.4998 0.825464 12 5.50063C7.50016 0.825464 2 4.27416 2 9.1371Z" fill="#a72a2a"></path> </g></svg>
-        </div>
-
-        <div className="cart">
-          <p>{cart.length>0 && cart.length}</p>
-          <Link to="/project/cart">
+        </div> */}
+        <div
+          style={{
+            position: "relative",
+            width: "100%",
+            height: "3rem",
+            margin: "10px",
+            marginLeft: "33%",
+          }}
+        >
           <svg
-            width="2rem"
-            height="2rem"
+            style={{ position: "absolute", top: "4px", left: "5px" }}
+            width="24px"
+            height="24px"
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -36,82 +73,78 @@ function Navbar() {
             ></g>
             <g id="SVGRepo_iconCarrier">
               {" "}
-              <g clip-path="url(#clip0_15_35)">
+              <g clip-path="url(#clip0_15_152)">
                 {" "}
                 <rect width="24" height="24" fill="white"></rect>{" "}
-                <path
-                  d="M5.33331 6H19.8672C20.4687 6 20.9341 6.52718 20.8595 7.12403L20.1095 13.124C20.0469 13.6245 19.6215 14 19.1172 14H16.5555H9.44442H7.99998"
-                  stroke="#000000"
-                  stroke-linejoin="round"
-                ></path>{" "}
-                <path
-                  d="M2 4H4.23362C4.68578 4 5.08169 4.30341 5.19924 4.74003L8.30076 16.26C8.41831 16.6966 8.81422 17 9.26638 17H19"
-                  stroke="#000000"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                ></path>{" "}
                 <circle
-                  cx="10"
-                  cy="20"
-                  r="1"
+                  cx="10.5"
+                  cy="10.5"
+                  r="6.5"
                   stroke="#000000"
                   stroke-linejoin="round"
                 ></circle>{" "}
-                <circle
-                  cx="17.5"
-                  cy="20"
-                  r="1"
-                  stroke="#000000"
-                  stroke-linejoin="round"
-                ></circle>{" "}
+                <path
+                  d="M19.6464 20.3536C19.8417 20.5488 20.1583 20.5488 20.3536 20.3536C20.5488 20.1583 20.5488 19.8417 20.3536 19.6464L19.6464 20.3536ZM20.3536 19.6464L15.3536 14.6464L14.6464 15.3536L19.6464 20.3536L20.3536 19.6464Z"
+                  fill="#000000"
+                ></path>{" "}
               </g>{" "}
               <defs>
                 {" "}
-                <clipPath id="clip0_15_35">
+                <clipPath id="clip0_15_152">
                   {" "}
                   <rect width="24" height="24" fill="white"></rect>{" "}
                 </clipPath>{" "}
               </defs>{" "}
             </g>
           </svg>
+          <input
+            type="search"
+            value={search}
+            onChange={handleSearch}
+            placeholder="Search Product..."
+            style={{
+              height: "2rem",
+              paddingLeft: "30px",
+              borderRadius: "10px",
+              width: "20rem",
+            }}
+          />
+        </div>
+
+        <div className="cart">
+          <Link
+            style={{ textDecoration: "none", color: "#2f2626" }}
+            to="/project/cart"
+          >
+            <Badge badgeContent={cart.length} color="success">
+              <ShoppingCartIcon color="primary"/>
+            </Badge>
           </Link>
         </div>
 
         <div className="profile">
-          <div onClick={() => setShowProfileOptions(!showProfileOptions)}><svg
-            width="2rem"
-            height="2rem"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-            <g
-              id="SVGRepo_tracerCarrier"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></g>
-            <g id="SVGRepo_iconCarrier">
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M16.5 7.063C16.5 10.258 14.57 13 12 13c-2.572 0-4.5-2.742-4.5-5.938C7.5 3.868 9.16 2 12 2s4.5 1.867 4.5 5.063zM4.102 20.142C4.487 20.6 6.145 22 12 22c5.855 0 7.512-1.4 7.898-1.857a.416.416 0 0 0 .09-.317C19.9 18.944 19.106 15 12 15s-7.9 3.944-7.989 4.826a.416.416 0 0 0 .091.317z"
-                fill="#000000"
-              ></path>
-            </g>
-          </svg>
+          <div onClick={() => setShowProfileOptions(!showProfileOptions)}>
+           <AccountCircleSharpIcon/>
           </div>
-          {showProfileOptions && <div className="profileOptions">
-            <div>
-              <p>My Profile</p>
+          {showProfileOptions && (
+            <div className="profileOptions">              <div onClick={() => setShowProfileOptions(!showProfileOptions)}>
+                <Link
+                  style={{ textDecoration: "none", color: "black" }}
+                  to="/project/myorders"
+                >
+                  <p>My Orders</p>
+                </Link>
+              </div>
+              <div
+                onClick={() => {
+                  setShowProfileOptions(!showProfileOptions);
+                  logout();
+                }}
+              >
+                <p>Logout</p>
+              </div>
             </div>
-            <div>
-              <p>My Orders</p>
-            </div>
-            <div>
-              <p>Logout</p>
-            </div>
-          </div>}
+          )}
         </div>
       </div>
     </div>

@@ -1,0 +1,40 @@
+{
+  "auth": [
+    {
+      "name": "rohit",
+      "email": "rohitbadhai.scoe.it@gmail.com",
+      "number": 7447576853,
+      "dob": "2024-04-29",
+      "gender": "male",
+      "country": "Indonesia",
+      "pincode": 411002,
+      "password": "Rohit@1213",
+      "confirmPassword": "Rohit@1213",
+      "id": 1
+    },
+    {
+      "name": "rohit",
+      "email": "rohitbadhai2001@gmail.com",
+      "number": 7447576853,
+      "dob": "2024-05-01",
+      "gender": "male",
+      "country": "Indonesia",
+      "pincode": 411002,
+      "password": "Rohit@1213",
+      "confirmPassword": "Rohit@1213",
+      "id": 2
+    },
+    {
+      "name": "rohit",
+      "email": "rohitbadhaai.scoe.it@gmail.com",
+      "number": 7447576853,
+      "dob": "2024-05-08",
+      "gender": "male",
+      "country": "Indonesia",
+      "pincode": 411002,
+      "password": "Rohit@1213",
+      "confirmPassword": "Rohit@1213",
+      "id": 3
+    }
+  ]
+}

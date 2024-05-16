@@ -11,7 +11,7 @@ function Card({item:{idMeal,strMeal,strCategory,strArea,strInstructions,strMealT
       </div>
       <i>Category - {strCategory}</i>
       <span>Origin : {strArea}</span>
-      <span>Rating : {Rating}</span>
+      <span>Rating : {Rating} </span>
       <div className='instructions'>
       <p>{strInstructions}</p>
       </div>

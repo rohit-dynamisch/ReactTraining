@@ -1,16 +1,17 @@
 {
   "products": [
     {
-      "id": 2,
-      "title": "iPhone 12",
-      "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
-      "price": "899",
-      "discountPercentage": "12",
-      "rating": 4.44,
-      "stock": 34,
-      "brand": "Apple",
-      "category": "smartphones",
-      "thumbnail": "https://cdn.dummyjson.com/product-images/2/thumbnail.jpg",
+      "id": "5y54yrf",
+      "brand": "NIKE",
+      "title": "Air Jordan Legacy 312 Low",
+      "division": "Kids",
+      "category": "Shoes",
+      "subCategory": "Lifestyle",
+      "price": 52.99,
+      "discountPercentage": "1",
+      "description": "The Air Jordan Legacy 312 Low Younger Kids' Shoe celebrates MJ's legacy with this shout-out to Chicago's 312 area code. The design creates a modern mash-up of iconic Jordan shoe elements.",
+      "thumbnail": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/0987395f-6275-4fa3-a77e-77faa3ad6c15/air-jordan-legacy-312-low-younger-shoe-bqlFkz.png",
+      "rating": "2",
       "images": [
         "https://cdn.dummyjson.com/product-images/2/1.jpg",
         "https://cdn.dummyjson.com/product-images/2/2.jpg",
@@ -31,6 +32,24 @@
       "thumbnail": "https://cdn.dummyjson.com/product-images/3/thumbnail.jpg",
       "images": [
         "https://cdn.dummyjson.com/product-images/3/1.jpg"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "iPhone 11",
+      "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+      "price": "899",
+      "discountPercentage": "20",
+      "rating": "4.6",
+      "stock": 34,
+      "brand": "Apple",
+      "category": "smartphones",
+      "thumbnail": "https://cdn.dummyjson.com/product-images/2/thumbnail.jpg",
+      "images": [
+        "https://cdn.dummyjson.com/product-images/2/1.jpg",
+        "https://cdn.dummyjson.com/product-images/2/2.jpg",
+        "https://cdn.dummyjson.com/product-images/2/3.jpg",
+        "https://cdn.dummyjson.com/product-images/2/thumbnail.jpg"
       ]
     },
     {
@@ -529,7 +548,174 @@
       "password": "Rohit@1213",
       "confirmPassword": "Rohit@1213",
       "id": 1
+    },
+    {
+      "name": "rohit",
+      "email": "blockchain2405@gmail.com",
+      "number": "7447576853",
+      "dob": "2024-05-01",
+      "gender": "male",
+      "country": "India",
+      "pincode": "411002",
+      "password": "Rohit@1213",
+      "confirmPassword": "Rohit@1213",
+      "id": 4
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "userDetails": {
+        "email": "rohitbadhai2001@gmail.com",
+        "password": "Rohit@1213"
+      },
+      "address": {
+        "name": "aditya",
+        "email": "blockchain2405@gmail.com",
+        "phone": "9099999999",
+        "address": "78, NANA PETH , ASHOK CHOWK , ANANT SHANTI CHAMBERS , FLAT NO. 305, PUNE-411002",
+        "country": "IN",
+        "state": "MH",
+        "city": "Pune",
+        "pin": "411002",
+        "id": 1
+      },
+      "Order": [
+        {
+          "id": "469d3d22-8ca5-4d39-818e-b6cf5464ddfb",
+          "title": "iPhone 11",
+          "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+          "price": "899",
+          "discountPercentage": "20",
+          "rating": "4.6",
+          "stock": 34,
+          "brand": "Apple",
+          "category": "smartphones",
+          "thumbnail": "https://cdn.dummyjson.com/product-images/2/thumbnail.jpg",
+          "images": [
+            "https://cdn.dummyjson.com/product-images/2/1.jpg",
+            "https://cdn.dummyjson.com/product-images/2/2.jpg",
+            "https://cdn.dummyjson.com/product-images/2/3.jpg",
+            "https://cdn.dummyjson.com/product-images/2/thumbnail.jpg"
+          ],
+          "productId": 2,
+          "quantity": 1
+        }
+      ],
+      "id": "6770cc02-d028-4d9c-ba8d-6822b6913fdd",
+      "status": "pending",
+      "payment": "cash",
+      "date": "5/15/2024, 12:30:49 PM"
+    },
+    {
+      "userDetails": {
+        "email": "rohitbadhai2001@gmail.com",
+        "password": "Rohit@1213"
+      },
+      "address": {
+        "name": "aditya",
+        "email": "blockchain2405@gmail.com",
+        "phone": "9099999999",
+        "address": "78, NANA PETH , ASHOK CHOWK , ANANT SHANTI CHAMBERS , FLAT NO. 305, PUNE-411002",
+        "country": "IN",
+        "state": "MH",
+        "city": "Pune",
+        "pin": "411002",
+        "id": 1
+      },
+      "Order": [
+        {
+          "id": "471af5ec-020e-4035-bb1c-ba7654539dfe",
+          "brand": "NIKE",
+          "title": "Air Jordan Legacy 312 Low",
+          "division": "Kids",
+          "category": "Shoes",
+          "subCategory": "Lifestyle",
+          "price": 52.99,
+          "discountPercentage": "1",
+          "description": "The Air Jordan Legacy 312 Low Younger Kids' Shoe celebrates MJ's legacy with this shout-out to Chicago's 312 area code. The design creates a modern mash-up of iconic Jordan shoe elements.",
+          "thumbnail": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/0987395f-6275-4fa3-a77e-77faa3ad6c15/air-jordan-legacy-312-low-younger-shoe-bqlFkz.png",
+          "rating": "2",
+          "images": [
+            "https://cdn.dummyjson.com/product-images/2/1.jpg",
+            "https://cdn.dummyjson.com/product-images/2/2.jpg",
+            "https://cdn.dummyjson.com/product-images/2/3.jpg",
+            "https://cdn.dummyjson.com/product-images/2/thumbnail.jpg"
+          ],
+          "productId": "5y54yrf",
+          "quantity": 1
+        }
+      ],
+      "id": "ed9b3324-20ed-46cd-9b41-9c8c826488ca",
+      "status": "In Transit",
+      "payment": "card",
+      "date": "5/16/2024, 6:01:19 PM"
+    },
+    {
+      "userDetails": {
+        "email": "rohitbadhai2001@gmail.com",
+        "password": "Rohit@1213"
+      },
+      "address": {
+        "name": "aditya",
+        "email": "blockchain2405@gmail.com",
+        "phone": "9099999999",
+        "address": "78, NANA PETH , ASHOK CHOWK , ANANT SHANTI CHAMBERS , FLAT NO. 305, PUNE-411002",
+        "country": "IN",
+        "state": "MH",
+        "city": "Pune",
+        "pin": "411002",
+        "id": 1
+      },
+      "Order": [
+        {
+          "id": "2db9c269-ec8b-4a56-8aeb-a688f10f81b7",
+          "title": "iPhone 11",
+          "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+          "price": "899",
+          "discountPercentage": "20",
+          "rating": "4.6",
+          "stock": 34,
+          "brand": "Apple",
+          "category": "smartphones",
+          "thumbnail": "https://cdn.dummyjson.com/product-images/2/thumbnail.jpg",
+          "images": [
+            "https://cdn.dummyjson.com/product-images/2/1.jpg",
+            "https://cdn.dummyjson.com/product-images/2/2.jpg",
+            "https://cdn.dummyjson.com/product-images/2/3.jpg",
+            "https://cdn.dummyjson.com/product-images/2/thumbnail.jpg"
+          ],
+          "productId": 2,
+          "quantity": 1
+        }
+      ],
+      "id": "21dc4ea7-a61e-4819-8c75-93be820f7078",
+      "status": "Out for delivery",
+      "payment": "cash",
+      "date": "5/16/2024, 7:23:36 PM"
+    }
+  ],
+  "address": [
+    {
+      "name": "aditya",
+      "email": "blockchain2405@gmail.com",
+      "phone": "9099999999",
+      "address": "78, NANA PETH , ASHOK CHOWK , ANANT SHANTI CHAMBERS , FLAT NO. 305, PUNE-411002",
+      "country": "IN",
+      "state": "MH",
+      "city": "Pune",
+      "pin": "411002",
+      "id": 1
+    },
+    {
+      "id": "14e94c78-b82e-4796-8e50-b50b951f8308",
+      "name": "rohit",
+      "email": "blockchain2405@gmail.com",
+      "phone": 7447576853,
+      "address": "78, NANA PETH , ASHOK CHOWK , ANANT SHANTI CHAMBERS , FLAT NO. 305, PUNE-411002",
+      "country": "IN",
+      "state": "MH",
+      "city": "Obra",
+      "pin": "411002"
+    }
+  ]
 }

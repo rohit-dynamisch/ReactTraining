@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ForgetPassword() {
+function Error() {
   return (
     <div>
       
@@ -8,4 +8,4 @@ function ForgetPassword() {
   )
 }
 
-export default ForgetPassword
+export default Error

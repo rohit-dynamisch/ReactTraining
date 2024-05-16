@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { Component, useEffect, useState } from "react";
+import React, { Component, Suspense, useEffect, useState } from "react";
 import Page1 from "./Day1/pages/Page1";
 import Page2 from "./Day2/Pages/Page2";
 import Children from "./D3Children/Children";
@@ -50,6 +50,19 @@ import AuthPage from "./D17MiniProject/pages/AuthPage";
 import Login from "./D17MiniProject/components/Login";
 import Signup from "./D17MiniProject/components/Signup";
 import ForgotPassword from "./D17MiniProject/components/ForgorPassword";
+import ProtectedRoute from "./D17MiniProject/components/ProtectedRoute";
+import { useAuthContext } from "./D17MiniProject/context/AuthContext";
+import Checkout from "./D17MiniProject/pages/Checkout";
+import Redux from "./D26Redux/Redux";
+import Orders from "./D17MiniProject/pages/Orders";
+import AllOrders from "./D17MiniProject/pages/AllOrders";
+import MyOrder from "./D17MiniProject/pages/MyOrder";
+import RtkHome from "./D27Redux/components/RtkHome";
+import RtkLogin from "./D27Redux/components/Login";
+import RtkSignup from "./D27Redux/components/Signup";
+import RtkOutlet from "./D27Redux/components/RtkOutlet";
+import AdminOrders from "./D17MiniProject/pages/AdminOrders";
+const Main = React.lazy(() => import("./D30LazyLoading/Main"));
 
 function App() {
   const [temp, setTemp] = useState("");
@@ -90,230 +103,210 @@ function App() {
             },
             {
               path: "ChildrenObject",
-              element: (
-                <Children>{{ name: "rohit" }}</Children>
-              ),
+              element: <Children>{{ name: "rohit" }}</Children>,
             },
             {
               path: "ChildrenNumber",
-              element: (
-                <Children>{100}</Children>
-              ),
+              element: <Children>{100}</Children>,
             },
             {
               path: "ChildrenArray",
-              element: (
-                <Children>{[1, 2, 3, 4, 5]}</Children>
-              ),
+              element: <Children>{[1, 2, 3, 4, 5]}</Children>,
             },
             {
               path: "ChildrenFunction",
               element: (
                 <Children>
-                    {(handleClick) => (
-                      <button onClick={handleClick}>Button from Parent</button>
-                    )}
-                  </Children>
+                  {(handleClick) => (
+                    <button onClick={handleClick}>Button from Parent</button>
+                  )}
+                </Children>
               ),
             },
             {
               path: "ChildToParent",
-              element: (
-                <ChildToParent ParentMethod={ParentMethod} />
-              ),
+              element: <ChildToParent ParentMethod={ParentMethod} />,
             },
             {
               path: "DefaultExport",
-              element: (
-                <DefaultExport />
-              ),
+              element: <DefaultExport />,
             },
             {
               path: "NamedExportDemo",
-              element: (
-                <NamedExportDemo />
-              ),
+              element: <NamedExportDemo />,
             },
             {
               path: "SpreadOperatorNestedObj",
-              element: (
-                <SpreadOperatorNestedObj />
-              ),
+              element: <SpreadOperatorNestedObj />,
             },
             {
               path: "StateAsProps",
               element: (
                 <StateAsProps num={num} setNum={setNum} check={check}>
-                {temp}
-              </StateAsProps>
+                  {temp}
+                </StateAsProps>
               ),
             },
             {
               path: "UseStateDemo",
-              element: (
-                <UseStateDemo />
-              ),
+              element: <UseStateDemo />,
             },
-            
           ],
         },
         {
           path: "day4",
-          children:[
+          children: [
             {
-              path:"brokenSrc",
-              element:<BrokenSrcNConsole/>
+              path: "brokenSrc",
+              element: <BrokenSrcNConsole />,
             },
             {
-              path:"counter",
-              element:<Counter/>
+              path: "counter",
+              element: <Counter />,
             },
             {
-              path:"stateArray",
-              element:<StateArray/>
+              path: "stateArray",
+              element: <StateArray />,
             },
             {
-              path:"NestedComponent",
-              element:<NestedComponent/>
-            }
-          ]
+              path: "NestedComponent",
+              element: <NestedComponent />,
+            },
+          ],
         },
         {
-          path:"day5/UseEffectDemo",
-          element:<UseEffectDemo/>
+          path: "day5/UseEffectDemo",
+          element: <UseEffectDemo />,
         },
         {
-          path:"day7",
-          children:[
+          path: "day7",
+          children: [
             {
-              path:"InputTypesNEvents",
-              element:<InputTypesNEvents/>
+              path: "InputTypesNEvents",
+              element: <InputTypesNEvents />,
             },
             {
-              path:"ExtraEvents",
-              element:<ExtraEvents/>
-            }
-          ]
+              path: "ExtraEvents",
+              element: <ExtraEvents />,
+            },
+          ],
         },
         {
-          path:"day9",
-          children:[
+          path: "day9",
+          children: [
             {
-              path:"loops",
-              element:<Loops/>
+              path: "loops",
+              element: <Loops />,
             },
             {
-              path:"MapFilterReduce",
-              element:<MapFilterReducs/>
+              path: "MapFilterReduce",
+              element: <MapFilterReducs />,
             },
-            
-          ]
+          ],
         },
         {
-          path:"day10",
-          children:[
+          path: "day10",
+          children: [
             {
-              path:"IterateObj",
-              element:<IterateObj/>
+              path: "IterateObj",
+              element: <IterateObj />,
             },
             {
-              path:"FiltersInCard",
-              element:<FiltersInCard/>
-            }
-          ]
+              path: "FiltersInCard",
+              element: <FiltersInCard />,
+            },
+          ],
         },
         {
-          path:"day11/Todo",
-          element:<Todo/>
+          path: "day11/Todo",
+          element: <Todo />,
         },
         {
-          path:"day12/FormValidation",
-          element:(
+          path: "day12/FormValidation",
+          element: (
             <FormContextProvider>
-                  <FormValidation />
-                </FormContextProvider>
-          )
+              <FormValidation />
+            </FormContextProvider>
+          ),
         },
         {
-          path:"day13",
-          children:[
+          path: "day13",
+          children: [
             {
-              path:"callbackhook",
-              element:<CallbackHook/>
+              path: "callbackhook",
+              element: <CallbackHook />,
             },
             {
-              path:"memoVScallback",
-              element:<Demo/>
-            }
-          ]
+              path: "memoVScallback",
+              element: <Demo />,
+            },
+          ],
         },
         {
-          path:"day16",
-          children:[
+          path: "day16",
+          children: [
             {
-              path:"refhook",
-              element:<RefHook/>
+              path: "refhook",
+              element: <RefHook />,
             },
             {
-              path:"allhooks",
-              element:<AllHooks/>
-            }
-          ]
+              path: "allhooks",
+              element: <AllHooks />,
+            },
+          ],
         },
         {
-          path:"day19/callbackExample",
-          element:<Callback/>
+          path: "day19/callbackExample",
+          element: <Callback />,
         },
         {
-          path:"project",
-          element:<ProjectLayout/>,
-          children:[
+          path: "project",
+          element: <ProjectLayout />,
+          children: [
             {
-              path:"",
-              element:<Home/>
+              path: "",
+              element: <Home />,
             },
             {
-              path:"editProduct",
-              element:<ProductForm/>
+              path: "editProduct",
+              element: <ProductForm />,
             },
             {
-              path:"addProduct",
-              element:<ProductForm/>
-
+              path: "addProduct",
+              element: <ProductForm />,
             },
             {
-              path:"cart",
-              element:<Cart/>
+              path: "cart",
+              element: <Cart />,
             },
             {
-              path:"profile",
-
+              path: "profile",
             },
             {
-              path:"addressForm"
+              path: "addressForm",
             },
             {
-              path:"productDetails/:id",
-              element:<Details/>
-            }
-          ]
-
+              path: "productDetails/:id",
+              element: <Details />,
+            },
+          ],
         },
         {
-          path:"*",
-          element:<Navigate to='/project' replace/>
-        }
-        
+          path: "*",
+          element: <Navigate to="/project" replace />,
+        },
       ],
     },
   ]);
+
+  const { userAuth } = useAuthContext();
   return (
     <>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Menu />}>
             <Route index path="" element={<Page1 />} />
-            
+
             <Route path="day2" element={<Page2 />} />
 
             <Route path="day3">
@@ -413,21 +406,184 @@ function App() {
             </Route>
 
             <Route path="project" element={<ProjectLayout />}>
-              <Route index element={<Home />} />
-              <Route path="editProduct" element={<ProductForm />} />
-              <Route path="addProduct" element={<ProductForm />} />
-              <Route path="cart" element={<Cart />} />
+              <Route
+                index
+                element={
+                  <Suspense
+                  fallback={
+                    <center>
+                      <h2>Loading....</h2>
+                    </center>
+                  }
+                >
+                  <ProtectedRoute>
+                    <Home />
+                  </ProtectedRoute>
+                  </Suspense>
+                }
+              />
+              <Route
+                path="editProduct"
+                element={
+                  <Suspense
+                  fallback={
+                    <center>
+                      <h2>Loading....</h2>
+                    </center>
+                  }
+                >
+                  <ProtectedRoute>
+                    <ProductForm />
+                  </ProtectedRoute>
+                  </Suspense>
+                }
+              />
+              <Route
+                path="addProduct"
+                element={
+                  <Suspense
+                  fallback={
+                    <center>
+                      <h2>Loading....</h2>
+                    </center>
+                  }
+                >
+                  <ProtectedRoute>
+                    <ProductForm />
+                  </ProtectedRoute>
+                  </Suspense>
+                }
+              />
+              <Route
+                path="cart"
+                element={
+                  <Suspense
+                  fallback={
+                    <center>
+                      <h2>Loading....</h2>
+                    </center>
+                  }
+                >
+                  <ProtectedRoute>
+                    <Cart />
+                  </ProtectedRoute>
+                  </Suspense>
+                }
+              />
               <Route path="profile" />
               <Route path="addressForm" />
-              <Route path="productDetails/:id" element={<Details/>}/>
-              <Route path="auth" element={<AuthPage/>}>
-              <Route path="login" element={<Login/>}/>
-              <Route path="signup" element={<Signup/>}/>
-              <Route path="forgotPassword" element={<ForgotPassword/>}/>
+              <Route
+                path="productDetails/:id?"
+                element={
+                  <Suspense
+                  fallback={
+                    <center>
+                      <h2>Loading....</h2>
+                    </center>
+                  }
+                >
+                  <ProtectedRoute>
+                    <Details />
+                  </ProtectedRoute>
+                  </Suspense>
+                }
+              />
+              <Route
+                path="checkout"
+                element={
+                  <Suspense
+                  fallback={
+                    <center>
+                      <h2>Loading....</h2>
+                    </center>
+                  }
+                >
+                  <ProtectedRoute>
+                    <Checkout />
+                  </ProtectedRoute>
+                  </Suspense>
+                }
+              />
+              <Route
+                path="orders/:id"
+                element={
+                  <Suspense
+                  fallback={
+                    <center>
+                      <h2>Loading....</h2>
+                    </center>
+                  }
+                >
+                  <ProtectedRoute>
+                    <Orders />
+                  </ProtectedRoute>
+                  </Suspense>
+                }
+              />
+              <Route
+                path="allorders"
+                element={
+                  <Suspense
+                  fallback={
+                    <center>
+                      <h2>Loading....</h2>
+                    </center>
+                  }
+                >
+                  <ProtectedRoute>
+                    <AdminOrders />
+                  </ProtectedRoute>
+                  </Suspense>
+                }
+              />
+              <Route
+                path="myorders"
+                element={
+                  <Suspense
+                  fallback={
+                    <center>
+                      <h2>Loading....</h2>
+                    </center>
+                  }
+                >
+                  <ProtectedRoute>
+                    <MyOrder />
+                  </ProtectedRoute>
+                  </Suspense>
+                }
+              />
+
+              <Route path="auth" element={<AuthPage />}>
+                <Route path="login" element={<Login />} />
+                <Route path="signup" element={<Signup />} />
+                <Route path="forgotPassword" element={<ForgotPassword />} />
               </Route>
             </Route>
 
             <Route path="day19/callbackExample" element={<Callback />} />
+
+            <Route path="day26/redux" element={<Redux />} />
+
+            <Route path="day27/reduxToolKit" element={<RtkOutlet />}>
+              <Route path="" element={<RtkHome />} />
+              <Route path="login" element={<RtkLogin />} />
+              <Route path="signup" element={<RtkSignup />} />
+            </Route>
+
+            <Route
+              path="day30/lazyLoading"
+              element={
+                <Suspense
+                  fallback={
+                    <center>
+                      <h2>Loading....</h2>
+                    </center>
+                  }
+                >
+                  <Main />
+                </Suspense>
+              }
+            />
 
             <Route path="*" element={<Navigate to="/project" replace />} />
           </Route>

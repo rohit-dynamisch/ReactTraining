@@ -52,7 +52,7 @@ export function FormContextProvider({ children }) {
       age: 17,
       gender: "male",
       profilePhoto:
-        "http://localhost:3000/0e7b2f72-c64c-4db7-9113-4428fa336f3f",
+      "blob:http://localhost:3000/fc09b247-6d69-425d-8d27-6be642be1d9d",
       skills: ["html", "css", "js"],
       about: "hello",
       password: "Rohit@1213",
@@ -194,6 +194,7 @@ export function FormContextProvider({ children }) {
       return;
     }
     if (e.target.id == "profilePhoto") {
+      console.log("profile",URL.createObjectURL(e.target.files[0]))
       setFormData({
         ...formData,
         [e.target.id]: URL.createObjectURL(e.target.files[0]),
